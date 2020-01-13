@@ -1,0 +1,24 @@
+﻿.data-row td {
+            line-height: 20px;
+        }
+
+        .easy-page {
+            border: 1px solid #ccc;
+            display: block;
+            float: left;
+            padding-left: 3px;
+            padding-right: 3px;
+            min-width: 25px;
+            margin-right: 3px;
+            line-height: 25px;
+            text-align: center;
+            cursor:pointer;
+            color:#666;
+        }
+        .page-index:hover{
+            border-color:red;
+        }
+         .current-page {
+            border-color: white;
+            color: red;
+        }

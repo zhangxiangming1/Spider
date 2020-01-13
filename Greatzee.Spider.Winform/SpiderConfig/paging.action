@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<action name="入口劝返告知书查询">
+  <charset>utf-8</charset>
+  <search_page_url><![CDATA[http://localhost:62972/Home/Orders]]></search_page_url>
+  <result_page_url_regex><![CDATA[^http://localhost:62972/Home/Orders$]]></result_page_url_regex>  
+  <storage_api></storage_api>
+  <storage_socket>127.0.0.1:9022</storage_socket>
+  <storage_local_directory>D:\html</storage_local_directory>
+  <script name="greatzee_register_parameter">
+    <![CDATA[
+      function greatzee_register_parameter(){
+        var parameter = {
+          goodsName:"口红"
+        };
+        return parameter;
+      }
+    ]]>
+  </script>
+  <script name="greatzee_execute_search">
+    <![CDATA[
+       function greatzee_execute_search(){
+        document.getElementById("goodsName").value=$RegisterParameter.goodsName;
+        document.getElementById("form1").submit();
+      }
+    ]]>
+  </script>
+  <script name="greatzee_has_next_page">
+    <![CDATA[
+       function greatzee_has_next_page(){
+        var pageCount = document.getElementsByClassName("page-count")[0].innerText;
+        pageCount=pageCount.substr(1,pageCount.length-2);
+        pageCount=parseInt(pageCount);
+        var pageIndex =parseInt(document.getElementsByClassName("current-page")[0].innerText);
+        return pageIndex < pageCount;
+      }
+    ]]>
+  </script>
+  <script name="greatzee_goto_next_page">
+    <![CDATA[
+      function greatzee_goto_next_page(){
+        var pageIndex =parseInt(document.getElementsByClassName("current-page")[0].innerText);
+        pageIndex++;
+        document.getElementById("pageIndex").value=pageIndex.toString();
+        document.getElementById("goodsName").value=$RegisterParameter.goodsName;
+        document.getElementById("form1").submit();
+      }
+    ]]>
+  </script>
+</action>

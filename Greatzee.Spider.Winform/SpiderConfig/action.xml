@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--周期间隔(毫秒)，小于0为无周期-->
+  <execute_interval>30000</execute_interval>
+  <!--动作间隔(毫秒)-->
+  <action_interval>100</action_interval>
+  <actions>
+    <file_name>login.action</file_name>
+    <file_name>nopaging.action</file_name>
+    <file_name>paging.action</file_name>
+  </actions>
+</config>

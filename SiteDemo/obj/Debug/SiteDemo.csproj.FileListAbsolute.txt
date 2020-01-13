@@ -1,0 +1,7 @@
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\System.Collections.Immutable.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\System.Reflection.Metadata.dll
+D:\svn\Spider\Spider\SiteDemo\bin\roslyn\VBCSCompiler.exe

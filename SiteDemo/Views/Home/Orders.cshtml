@@ -1,0 +1,68 @@
+﻿@model IEnumerable<OrderInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Orders</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+        }
+    </style>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Scripts/easypage/easypage.css" rel="stylesheet" />
+    <script src="~/Scripts/easypage/easypage.js"></script>
+    <script type="text/javascript">
+         $(function () {
+            var option = {
+                containerID: "page",
+                recordCount: parseInt(@ViewBag.RecordCount),
+                pageSize: 5,
+                pageIndex: parseInt(@ViewBag.PageIndex),
+                click: function (index) {
+                    $("#pageIndex").val(index);
+                    $("#form1").submit();
+                }
+            }
+            setPage(option);
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" method="post" action="/Home/Orders">
+        商品名称：<input type="text" id="goodsName" name="goodsName" value="@ViewBag.GoodsName"/>
+        <input type="submit" value="搜索" />
+        <input type="hidden" id="pageIndex" name="pageIndex" value="@ViewBag.PageIndex" />
+    </form>
+    <table style="width:600px;margin:3px;">
+        <tr>
+            <th>ID</th>
+            <th>商品名称</th>
+            <th>价格</th>
+            <th>数量</th>
+            <th>金额</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.OrderID</td>
+                <td>@item.GoodsName</td>
+                <td>@item.Price</td>
+                <td>@item.GoodsCount</td>
+                <td>@(item.Price*item.GoodsCount)</td>
+            </tr>
+        }
+    </table>
+    <div id="page"></div>
+</body>
+</html>

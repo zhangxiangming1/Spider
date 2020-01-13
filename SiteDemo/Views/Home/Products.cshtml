@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProductInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Products</title>
+    <style type="text/css">
+        table{border-collapse:collapse;}
+        th,td{border:1px solid black;padding:3px;}
+    </style>
+</head>
+<body>
+    <form method="post" action="/Home/Products">
+        产品类型:<input type="text" id="productType" name="productType" value="@ViewBag.ProductType" style="margin-right:30px;" />
+        颜色:<input type="text" id="color" name="color" value="@ViewBag.Color" />
+        <input type="submit" value="查询" />
+    </form>
+    <table style="width:600px;margin-top:10px;">
+        <tr>
+            <th>产品编号</th>
+            <th>产品名称</th>
+            <th>产品类型</th>
+            <th>颜色</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductType</td>
+                <td>@item.Color</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
